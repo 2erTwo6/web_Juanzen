@@ -1,0 +1,95 @@
+<!DOCTYPE html>
+<html lang="zh-CN">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>捐赠通道</title>
+    <style>
+        body {
+            font-family: 'Microsoft YaHei', sans-serif;
+            max-width: 800px;
+            margin: 0 auto;
+            padding: 20px;
+            text-align: center;
+            background-color: #f5f5f5;
+        }
+        h1 {
+            color: #333;
+        }
+        p {
+            color: #666;
+            margin-bottom: 30px;
+        }
+        .button-container {
+            display: flex;
+            justify-content: center;
+            gap: 20px;
+            margin-bottom: 20px;
+        }
+        button {
+            padding: 10px 20px;
+            font-size: 16px;
+            border: none;
+            border-radius: 5px;
+            cursor: pointer;
+            transition: all 0.3s;
+        }
+        #alipay-btn {
+            background-color: #1777ff;
+            color: white;
+        }
+        #alipay-btn:hover {
+            background-color: #1468d9;
+        }
+        #wechat-btn {
+            background-color: #07c160;
+            color: white;
+        }
+        #wechat-btn:hover {
+            background-color: #069e4e;
+        }
+        .qr-code {
+            display: none;
+            max-width: 300px;
+            margin: 20px auto;
+            border: 1px solid #ddd;
+            border-radius: 5px;
+            padding: 10px;
+            background-color: white;
+        }
+        .qr-code img {
+            width: 100%;
+            height: auto;
+        }
+    </style>
+</head>
+<body>
+    <h1>捐赠通道</h1>
+    <p>本站维护需要成本，如果你愿意的话可以请我喝一杯奶茶QWQ</p>
+    
+    <div class="button-container">
+        <button id="alipay-btn">支付宝</button>
+        <button id="wechat-btn">微信</button>
+    </div>
+    
+    <div id="alipay-qr" class="qr-code">
+        <img src="zfb.png" alt="支付宝收款二维码">
+    </div>
+    
+    <div id="wechat-qr" class="qr-code">
+        <img src="wx.jpg" alt="微信收款二维码">
+    </div>
+
+    <script>
+        document.getElementById('alipay-btn').addEventListener('click', function() {
+            document.getElementById('alipay-qr').style.display = 'block';
+            document.getElementById('wechat-qr').style.display = 'none';
+        });
+        
+        document.getElementById('wechat-btn').addEventListener('click', function() {
+            document.getElementById('wechat-qr').style.display = 'block';
+            document.getElementById('alipay-qr').style.display = 'none';
+        });
+    </script>
+</body>
+</html>
